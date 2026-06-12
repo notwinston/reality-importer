@@ -78,7 +78,7 @@ async function boot(): Promise<void> {
   addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); } }, { passive: false });
 
   // ── Tooling handle ────────────────────────────────────────────────────
-  (window as unknown as { __ri: unknown }).__ri = { bus, world, version: 1 };
+  (window as unknown as { __ri: unknown }).__ri = { bus, world, version: 1, demoMode: () => demo };
 }
 
 boot().catch((e) => {
