@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Reality Importer</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- WebGL room mounts here -->
+    <canvas id="stage"></canvas>
+
+    <!-- Live selfie-mirrored webcam preview, top-left. Later modules rely on
+         this element being CSS-mirrored (scaleX(-1)). -->
+    <video id="webcam" autoplay playsinline muted></video>
+    <div id="reticle" aria-hidden="true"></div>
+
+    <!-- HUD owned by src/hud.ts (count / mode / latency / toast). -->
+    <div id="hud"></div>
+
+    <!-- Key hints, bottom-right. Static. -->
+    <div id="keys">
+      <span><b>SPACE</b> scan</span>
+      <span><b>X</b> rain</span>
+      <span><b>G</b> gravity</span>
+      <span><b>H</b> hands</span>
+      <span><b>D</b> demo</span>
+      <span><b>R</b> reset</span>
+    </div>
+
+    <!-- Splash overlay, owned entirely by index.html + style.css. Fades out
+         on its own by ~2.5s; hud.ts never touches it. -->
+    <div id="splash">
+      <div class="splash-glow"></div>
+      <div class="splash-title">REALITY&nbsp;IMPORTER</div>
+      <div class="splash-sub">point · press space · materialize</div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

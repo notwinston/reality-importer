@@ -1,0 +1,10 @@
+node_modules/
+dist*/
+.verify/
+.browsers/
+.env
+.env.*
+!.env.example
+src/config.local.ts
+loop-notes/
+*.local.md
